@@ -1,0 +1,89 @@
+<div
+  class="container d-flex justify-content-center align-items-center min-vh-100"
+>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title d-flex justify-content-center" id="cardtitle">
+        Login
+      </h5>
+
+      @if (selectionFlag == true) {
+        <div class="mb-3">
+          <input
+            id="user_input"
+            type="text"
+            [(ngModel)]="username"
+            class="form-control"
+            placeholder="Username"
+          />
+        </div>
+
+        <div class="mb-3">
+          <input
+            id="pw_input"
+            type="password"
+            [(ngModel)]="password"
+            class="form-control"
+            placeholder="Password"
+          />
+        </div>
+
+      } @else {
+        <div class="mb-3">
+          <input
+            type="text"
+            [(ngModel)]="username"
+            class="form-control"
+            placeholder="Create Username"
+          />
+        </div>
+
+        <div class="mb-3">
+          <input
+            type="password"
+            [(ngModel)]="password"
+            class="form-control"
+            placeholder="Create Password"
+          />
+        </div>
+
+        <div class="mb-3">
+          <input
+            type="password"
+            [(ngModel)]="confirmPassword"
+            class="form-control"
+            placeholder="Confirm Password"
+          />
+        </div>
+      }
+
+      <div class="d-flex justify-content-center">
+        <p id="systemnot"></p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <button
+            (click)="selectOption()"
+            type="button"
+            class="btn btn-light"
+            id="loginselection"
+          >
+            Login
+          </button>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-end">
+          <button
+            type="button"
+            (click)="submitAction()"
+            class="btn btn-info"
+            id="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
